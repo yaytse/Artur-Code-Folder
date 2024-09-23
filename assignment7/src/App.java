@@ -12,7 +12,7 @@ public class App {
         System.out.println(final1);
 
 
-        String message2 = "That was great - lol.";
+        String message2 = "That was great - lol."                                                                                                                                                                                                                                                                                            ;
         String target2 = "lol";
         int index2 = message2.indexOf(target2);
         String final2 = message2.substring(0, index2) + "laugh out loud.";
