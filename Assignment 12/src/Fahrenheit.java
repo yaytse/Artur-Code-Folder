@@ -2,22 +2,20 @@
 
 public class Fahrenheit
 {
-	private double fahrenheit;
-
-	public void setFahrenheit(double fahren)
+	public double FtoC(double temp)
 	{
+		double newNum;
+		newNum = (5/9)*(temp - 32);
+		return newNum;
+
 	}
 
-	public double getCelsius()
+	public double CtoF(double temp)
 	{
-		double celsius = 0.0;
-		//add code to convert fahrenheit to celsius
-		return celsius;
+		double newNum;
+		newNum = (9/5)*(temp) + 32;
+		return newNum;
 	}
 
-	public void print()
-	{
-		//this is part of the solution
-		System.out.println(getCelsius());
-	}
+
 }
