@@ -2,14 +2,29 @@ import java.util.Scanner;
 
 public class Methods {
     Scanner input = new Scanner(System.in);
+    
     public void userinput1(){
-        
         double lenght, width; 
         System.out.print("Please input the lenght of a ractangle: ");
         lenght = input.nextDouble();
         System.out.print("Please input the width of a ractangle: ");
         width = input.nextDouble();
         System.out.println(PerimeterOfR(lenght, width));
+
+    }
+
+    public void userinput2(){
+        double side;
+            System.out.print("Please input the lenght of a side: ");
+            side = input.nextDouble();
+            System.out.print(SurfaceOfCube(side));
+    }
+
+    public void userinput3(){
+        double radius;
+        System.out.print("Please input the radius of a circle: ");
+        radius = input.nextDouble();
+        System.out.print(SurfaceOfCube(radius));
     }
     public double PerimeterOfR(double lenght, double width){
 		return 2*(lenght + width);
