@@ -2,36 +2,40 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+        //all the methods and variables we need
         Methods calculator = new Methods();
         Scanner input = new Scanner(System.in);
-        int userprompt;
+        boolean value = false;
+        
+        //while the input value isn't 
+        while (value == false){
         System.out.println("Enter '1' if you want to find perimeter of a ractangle\nEnter '2' if you want to find surface area of a cube\nEnter '3' if you want to find area of a circle");
-        userprompt = input.nextInt();
-        if (userprompt == 1){
-            calculator.userinput1();
-        }
-        else if(userprompt == 2) {
-            calculator.userinput2();
-        }
-        else if(userprompt == 3){
-            calculator.userinput3();
-        }
+        String input1 = input.nextLine();  
 
         try {
-            if(userprompt < 3 || userprompt >= 150) {
-                throw new NumberFormatException();
+            int userprompt = Integer.valueOf(input1);
+            if (userprompt == 1){
+                calculator.userinput1();
+                value = true;
             }
-        }
+            else if(userprompt == 2) {
+                calculator.userinput2();
+                value = true;
+            }
+            else if(userprompt == 3){
+                calculator.userinput3();
+                value = true;
+            }
+            else{
+                System.out.println("Please input a correct number.");
+                continue;
+            }}
         catch (NumberFormatException ex) {
-            if(age2 <= 0) {
-                System.err.print("Age can not be 0 or negative.");
-            }
-            else if (age2 >= 150) {
-                System.err.print("Age can not be equal to or more than 150.");
-            }
-            else if (age.contains("#@$")) {
-                System.err.print("You did not enter a valid age.");
+            System.out.println("Please, don't input a string :)");
+            value = false;
             }
         }
+
+
     }
 }
