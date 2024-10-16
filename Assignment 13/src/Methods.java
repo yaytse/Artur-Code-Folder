@@ -20,8 +20,8 @@ public class Methods {
                     continue;
                 }
                 else{
-                System.out.printf("%.2f", PerimeterOfR(lenght, width)); //printing the result that another method returns
-
+                System.out.printf("The perimeter of a rectangle is " + "%.2f", PerimeterOfR(lenght, width)); //printing the result that another method returns
+ 
             }
                 }
             catch (NumberFormatException ex){
@@ -43,7 +43,7 @@ public class Methods {
                     continue;
                 }
                 else{
-                System.out.printf("%.2f", SurfaceOfCube(side));//printing the result that another method returns
+                System.out.printf("The surface of a cube is " + "%.2f", SurfaceOfCube(side));//printing the result that another method returns
             }
                 }
             catch (NumberFormatException ex){
@@ -66,7 +66,7 @@ public class Methods {
                 }
                 else{
                     //printing the result that another method returns
-                    System.out.printf("%.2f", AreaofCircle(radius)); 
+                    System.out.printf("The area of a cirle is " + "%.2f", AreaofCircle(radius)); 
                 }
                 }
             catch (NumberFormatException ex){
