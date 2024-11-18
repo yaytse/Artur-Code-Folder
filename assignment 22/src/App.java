@@ -3,5 +3,6 @@ public class App {
         Methods test = new Methods();
         test.input();
         test.checkLeap();
+    
     }
 }

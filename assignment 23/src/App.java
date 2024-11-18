@@ -2,7 +2,7 @@ import static java.lang.System.*;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
-        
+        //user's input
         Scanner input = new Scanner(System.in);
         int userprompt = 0;
         boolean value = false;
@@ -18,6 +18,8 @@ public class App {
             value = false;
             }
         }
+
+        //final print statement
         System.out.println( Methods.countCoolNumbers(userprompt) + " cool numbers between 6 - " + userprompt);
 
     }

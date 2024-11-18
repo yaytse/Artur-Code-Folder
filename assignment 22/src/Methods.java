@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Methods {
     Scanner input = new Scanner(System.in);
+
     public int userprompt;
     public void input(){
     boolean value = false;
@@ -19,6 +20,8 @@ public class Methods {
             }
         }
     }
+
+
     public void checkLeap(){
         if ((userprompt%4 == 0 && userprompt%100!=0) || userprompt%400 == 0){
             System.out.println(userprompt + " is a leap year.");
@@ -26,5 +29,6 @@ public class Methods {
         else{
         System.out.println(userprompt + " is NOT a leap year.");
         }
-    }
+
+}
 }
