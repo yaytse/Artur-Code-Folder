@@ -1,7 +1,6 @@
 import java.util.Random;
 
 public class Methods {
-    //Method for checking if the number is cool
     public static int getRandomNum()
 	{
         Random rand = new Random();
