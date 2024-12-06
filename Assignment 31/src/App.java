@@ -3,15 +3,31 @@
 //Dec 5 2024
 
 import java.util.Arrays;
+import java.util.Scanner;
 import java.lang.Math;
 
 public class App
-{
+{	
+	private static Scanner inp = new Scanner(System.in);
+    private static int[] nums = null; //Declare the array
 	public static void main( String args[] )
 	{
-	
-		int[] one = {7, 4,10,0,1,7,6,5,3,2,9, 7};
+
+		System.out.println("How many numbers would you like to input? ");
+        int SIZE = inp.nextInt();
+
+        nums = new int[SIZE];
+
+        for(int i = 0; i < nums.length; i++) {
+            System.out.println("Please enter an integer: ");
+            nums[i] = inp.nextInt();
+        }
+
+		//int[] one = {7, 4,10,0,1,7,6,5,3,2,9, 7};
 		
+		Array nums = new Array();
+
+		nums.getCount(nums, 3, 5);
 		// Print the array for the user to view
 		System.out.println(Arrays.toString(one));
 
@@ -41,8 +57,15 @@ public class App
 	}
 
 
+
+
+class Array {
+
+	Array(){
+
+	}
 	//getSum() will return the sum of the numbers from start to stop, not including stop
-	public static int getSum(int[] numArray, int start, int stop)
+	public int getSum(int[] numArray, int start, int stop)
 	{
         int counter = 0;
         for (int i = start; i<=stop; i++){
@@ -53,7 +76,7 @@ public class App
 
 
 	//getCount() will return number of times val is present
-	public static int getCount(int[] numArray, int val)
+	public int getCount(int[] numArray, int val)
 	{
 		int counter = 0;
         for (int i = 0; i<=numArray.length - 1; i++){
@@ -61,6 +84,8 @@ public class App
             counter = counter + 1;
             }
         }
+		System.out.println("# of " + val + " s  =  " + getCount(numArray, val));
 		return counter;
 	}
+}
 }

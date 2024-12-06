@@ -1,29 +1,34 @@
-Ball[] ballGroup;
-int pos = 0;
+ArrayList<Ball> ballGroup;
+//Ball[] ballGroup;
+
 
 void setup() { // Happens once at launch
     size(1280, 720);
     background(200,200,200);
-    ballGroup = new Ball[100];
+    ballGroup = new ArrayList<Ball>();
 }
 
 void draw() { // Happens constantly (screen refresh)
     background(200,200,200);
-
-    for (int i = 0; i < pos; i++) {
-        ballGroup[i].display();
-        ballGroup[i].move();
-    }
-
-}
-
-void mousePressed() {
-    if(pos < ballGroup.length) {
-        ballGroup[pos] = new Ball(mouseX, mouseY, 70);
-        pos++; //Next empty position
+    
+    for (int i = 0; i < ballGroup.size(); i++){
+    ballGroup.get(i).display();
+    ballGroup.get(i).move();
     }
 }
 
+
+void mousePressed(){
+  ballGroup.add(new Ball(mouseX, mouseY, 70));
+}
+
+void keyPressed(){
+  if (key == 'c'){
+    for (int i = ballGroup.size()- 1; i >= 0; i--){
+      ballGroup.remove(i);
+    }
+  }
+}
 
 class Ball {
     int x, y, r;
