@@ -3,6 +3,7 @@
 //December 11
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
@@ -15,40 +16,33 @@ public class App {
         System.out.println("Press 'Q' to stop putting names in the hat.");
         Scanner scanner = new Scanner(System.in);
         while (input) {
-        String i = scanner.next();
-            if (i == "q"){
-                System.out.println("IF STA");
-                input = false;
+            String i = scanner.nextLine(); // Using nextLine() to get the full input
+            
+            if (i.equalsIgnoreCase("Q") && names.size() < 10) {
+                System.out.println("Please make sure you have at least 10 names in the hat.");
             }
-            else if (i== "Q" && names.size() < 10){
-                System.out.println("Please amke sure you have at least 10 names in the hat.");
+            else if (i.equalsIgnoreCase("Q")) {
+                input = false;  // Stop the loop when 'Q' is pressed and at least 10 names are added
             }
-            else{
-                System.out.println("ELSE STA");
+            else {
+                names.add(i);  // Add name to the list
+            }
+        }
+        // Displays all the names added
+        System.out.println("\nNames in the hat: " + names);
+        
+        Random rand = new Random();
 
-                names.add(i);
-            }
+        while (names.size() > 1) {
+            // Randomly pick an index of a name to remove
+            int index = rand.nextInt(names.size());
+            String removedName = names.remove(index); // Remove the name
+            System.out.println(removedName + " has been removed.");
+            Thread.sleep(2000);
+        }
+
+        // At the end, only one name will be left, and they are the winner
+        String winner = names.get(0);
+        System.out.println("\nAnd the winner is... " + winner + "!");
     }
-
-/*static void nameInp(ArrayList names){
-    boolean input = true;
-    System.out.println("Please put at least 10 names into the hat: ");
-    System.out.println("Press 'Q' to stop putting names in the hat.");
-    Scanner scanner = new Scanner(System.in);
-    while (input) {
-      String i = scanner.nextLine();
-        if ((String)i == "q"){
-            System.out.println("IF STA");
-            input = false;
-        }
-        else if (i== "Q" && names.size() < 10){
-            System.out.println("Please amke sure you have at least 10 names in the hat.");
-        }
-        else{
-            System.out.println("ELSE STA");
-
-            names.add(i);
-        }
-    }*/
-}
 }
