@@ -1,9 +1,9 @@
 grid g;
 
 void setup(){
-    size(900, 900);
+  size(900, 514);
 
-    g = new grid(70, 70);
+    g = new grid(9, 5);
 }
 
 void draw(){
@@ -15,20 +15,65 @@ void mousePressed(){
     g.click(mouseX, mouseY);
 }
 
-void keyPressed(){
-    if (key == 'c'){
-      g.clear();
-    }
-    else if (key == '5'){
-      g.five();
+
+
+
+class grid {
+    int ROWS, COLS;
+    
+    boolean[][] gridarray;
+    // constructor
+    grid(int tempr, int tempc){
+        ROWS = tempr;
+        COLS = tempc;
+        gridarray = new boolean[ROWS][COLS];
+        for (int y = 0; y < ROWS; y++){
+            for (int x = 0; x < COLS; x++ ){
+                gridarray[y][x] = false;
+            }
+        }
     }
     
+    
+    void displayGrid(){
+      int xcor = 220;
+      int ycor = 70;
+      for (int y = 0; y < ROWS; y++){
+        for (int x = 0; x < COLS; x++ ){
+              if (gridarray[y][x] == false){
+              fill(255);
+              }
+              else{
+              fill(0);
+              }
+  
+           rect(xcor, ycor, 70, 85);
+           ycor = ycor + 85;
+        }
+           xcor = xcor + 70;
+           ycor = 70;
+      }
+    }
+
+    void click(int mx, int my){
+        if (mx > 220 && mx < 850 && my > 70 && my < 495){ 
+        int x = (mx - 220) / 70;
+        int y = (my - 70) / 85;
+
+        if (gridarray[x][y]== false){
+            gridarray[x][y] = true;
+        }
+        else{
+            gridarray[x][y] = false;
+        }
+        }
+    }
+  
+  
 }
 
 
-
-
-
+/*
 class grid {
     int ROWS, COLS;
     boolean[][] gridarray;
@@ -99,3 +144,4 @@ class grid {
       }
     }
 }
+*/
